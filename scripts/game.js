@@ -1,6 +1,13 @@
 const board = ["", "", "", "", "", "", "", "", ""];
-const squares = document.querySelectorAll(".sqr");
-const playerTime = 0;
-const symbols = ["0", "x"];
+let playerTime = 0;
+let symbols = ["o", "x"];
 
+function handleMove(position) {
+  board[position] = symbols[playerTime];
 
+  if (playerTime == 0) {
+    playerTime = 1;
+  } else {
+    playerTime = 0;
+  }
+}
