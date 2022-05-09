@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.sqr{
+  background-color: rgb(234, 255, 72);
+  height: 150px;
+  width: 150px;
+  border: 1px solid gray;
+  /* border-radius: 12px; */
+}
+h1{
+  text-align: center;
+}
+.o{
+  text-align: center;
+  margin-top: 15px;
+  margin-right: 8px;
+}
+.o::after{
+  content: "\1F414";
+  font-size: 75px;
+  
+}
+.x{
+  text-align: center;
+  margin-top: 15px;
+}
+.x::after{
+  content: "\1F43B";
+  font-size: 75px;
+}
