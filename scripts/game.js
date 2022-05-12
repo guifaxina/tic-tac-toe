@@ -2,6 +2,7 @@ const board = ["", "", "", "", "", "", "", "", ""];
 let playerTime = 0;
 let symbols = ["o", "x"];
 let gameOver = false;
+let counter = 0;
 
 const winStates = [
   [0, 1, 2],
@@ -22,8 +23,15 @@ function handleMove(position) {
   if (board[position] == "") {
     board[position] = symbols[playerTime];
 
+    counter++;
+    
     gameOver = isWin();
-
+    if (counter == 9 && gameOver == false){
+      setTimeout(() => {
+        alert("VELHA!")
+        resetGame()
+      }, 10);
+    }
     if (!gameOver) {
       playerTime = playerTime == 0 ? 1 : 0;
     }
@@ -57,5 +65,13 @@ function resetGame() {
   gameOver = false;
   board.forEach((element, index) => {
     render(index);
+  });
+}
+
+function draw() {
+  board.forEach((element, index) => {
+    if (board[index] != "") {
+      console.log("deu veia");
+    }
   });
 }
