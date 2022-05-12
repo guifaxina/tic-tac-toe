@@ -6,18 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function handleClick(event) {
-  handleMove(event.target.id);
-  render();
+  let position = event.target.id; // id of the target
+  if (handleMove(position)) {
+    setTimeout(() => {
+      alert(`O jogador ${playerTime + 1} venceu!`);
+    }, 20);
+  }
+  render(position);
 }
 
-function render() {
-  const squares = document.querySelectorAll(".sqr");
-  squares.forEach((e) => {
-    let position = e.id;
-    let symbol = board[position];
+function render(position) {
+  let square = document.getElementById(position.toString());
+  let symbol = board[position];
 
-    if (e != "") {
-      e.innerHTML = `<div class="${symbol}"></div>`;
-    }
-  });
+  if (square != ""); {
+    square.innerHTML = `<div class="${symbol}"></div>`;
+  }
 }
+
+const btn = document.getElementById("btn");
+btn.addEventListener("click", resetGame)

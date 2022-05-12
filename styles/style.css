@@ -36,3 +36,13 @@ h1{
   content: "\1F43B";
   font-size: 75px;
 }
+.btn{
+  padding: 20px;
+  background-color: greenyellow;
+  color: white;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: rgb(153, 231, 36);
+}

@@ -3,7 +3,7 @@ let playerTime = 0;
 let symbols = ["o", "x"];
 let gameOver = false;
 
-let winStates = [
+const winStates = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -47,4 +47,15 @@ function isWin() {
     }
   }
   return false;
+}
+
+function resetGame() {
+  board.forEach((element, index) => {
+    board[index] = "";
+  });
+  playerTime = 0;
+  gameOver = false;
+  board.forEach((element, index) => {
+    render(index);
+  });
 }
